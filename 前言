@@ -1,0 +1,27 @@
+在軟體測試中，測試需求(test requirement)可為特定測試目的或是軟體功能，針對此情形所設計的一組輸入跟預期輸出，則稱為測試案例(test case)或測試個案 [26]，而這些測試案例所組成的集合就稱為測試套件(test suite) [27]。在軟體開發過程，為了修正軟體在改版過程中出現的錯誤，我們需要進行軟體測試來提升軟體的品質。回歸測試(regression testing)是軟體測試的ㄧ種方式，這種方式是將現有測試案例全部重新執行一遍，雖然非常花費時間，但是卻是軟體開發非常重要的一部分。在軟體系統被修改後，回歸測試被運用檢驗現有軟體功能是否依舊能正常運作。現今軟體公司為了提供更好的服務給大眾，軟體更新改版非常快速。軟體更新亦常伴隨新功能的擴增，為了確保新功能與現有功能的品質，累積的測試案例越來越多。因此，每次改版後皆必須花費很多的時間來進行回歸測試，以確保軟體更新後現有的功能是否能完整運行。　
+　　Shi等人的研究[28]*指出，因測試套件變得越來越大，導致要花費好幾周的時間來執行回歸測試，為了解決這項問題，測試套件精簡方法(test suite reduction)[1]被提出來加速回歸測試 。測試套件精簡方法能辨別且移除滿足部分測試需求相同的測試案例，以加速回歸測試。然而，Shi等人的研究[3]*指出，傳統上測試套件精簡技術要確保精簡後測試套件所滿足的測試需求和原始測試套件所滿足的測試需求一樣，這個特性會限制測試案例的取捨。
+　　讓我們更進一步思考，假使精簡後的測試套件執行時間仍舊過長，為了確保回歸測試能在規定時間內完成，有必要放寬傳統測試套件精簡技術上的限制，以便選出一個更小的測試套件集合。我們結合了這兩種方法，一開始先精簡原始測試套件，產生一個更小的測試套件，接下來使用整體學習式的支援向量機(Support Vector Machines)[6]，來挑選出一個更小的測試案例集合，結合這兩種方法能大幅地縮減測試套件的大小。
+
+　　我們將在software-artifact Infrastructure Repository (SIR) 的 11支C語言程式和一支JAVA語言程式上，檢驗此方法的有效性，從五個方面來作評估：測試套件大小、測試套件效能、測試案例效能、測試套件每單位執行時間效能、演算法和測試套件每單位執行時間效能。
+
+　　本文後續章節內容編排如下：在第二章中，我們將回顧本論文所需的背景知識和技巧演算法；第三章中將說明研究方法；第四章將設計一套實驗流程，藉由討論研究問題，評估所提出的技巧在實驗程式的成效，並且討論實驗結果有效性的威脅。第五章將總結討論與未來研究方向。
+
+
+
+
+
+[1]	G.Rothermel, M. J.Harrold, J.VonRonne, and C.Hong, “Empirical studies of test-suite reduction,” Softw. Test. Verif. Reliab., vol. 12, no. 4, pp. 219–249, 2002.
+*Therefore, researchers have investigated the notion that when several test cases in a test suite execute the same program components, that test suite can be reduced to a smaller suite that guarantees equivalent coverage. This research has produced several test-suite reduction algorithms.
+
+[3]	A.Shi, A.Gyori, M.Gligoric, A.Zaytsev, and D.Marinov, “Balancing Trade-offs in Test-suite Reduction,” Proc. 22nd ACM SIGSOFT Int. Symp. Found. Softw. Eng., pp. 246–256, 2014.
+*These three properties of traditional test-suite reduction research limit the insight into the trade-offs of reduced test suites.
+
+[6]	H. C.Kim, S.Pang, H. M.Je, D.Kim, and S. Y.Bang, “Support vector machine ensemble with bagging,” Lect. Notes Comput. Sci. (including Subser. Lect. Notes Artif. Intell. Lect. Notes Bioinformatics), vol. 2388, pp. 397–408, 2002.
+
+[26] D.  Binkley,  “Semantics  Guided  Regression  Test  Cost  Reduction,” IEEE Trans. on Software Engineering, Vol. 23, No. 8, pp. 498-516, August 1997.
+
+[27] H. Zhong, L.  Zhang, and H. Mei, “An Experimental Study of  Four Typical Test Suite Reduction Techniques,” Information and Software Technology, Vol. 50, No. 6, pp. 534-546, May 2008.
+
+[28]	A.Shi, T.Yung, A.Gyori, andD.Marinov, “Comparing and Combining Test-suite Reduction and Regression Test Selection,” Proc. 2015 10th Jt. Meet. Found. Softw. Eng., pp. 237–247, 2015.
+*Additionally, regression test suites grow and often become costly to run, with previous research reporting test suites taking even weeks to run.
+
